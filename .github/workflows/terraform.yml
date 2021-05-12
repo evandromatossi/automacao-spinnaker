@@ -20,7 +20,7 @@ jobs:
     
     defaults:
       run:
-        working-directory: ${{ github.workspace }}/appservice
+        working-directory: ${{ github.workspace }}
         
     environment:
       name: dev
