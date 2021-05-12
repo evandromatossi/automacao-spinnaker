@@ -15,7 +15,7 @@ jobs:
           name: terraform
           path: ${{ github.workspace }}
   deploy-dev-infra:
-    name: Deploy Infra Dev
+    name: Create pipeline spinnaker
     runs-on: ubuntu-latest
     
     defaults:
