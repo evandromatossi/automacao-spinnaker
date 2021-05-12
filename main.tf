@@ -21,26 +21,26 @@ resource "spinnaker_application" "terraform_example" {
 resource "spinnaker_pipeline" "terraform_example" {
     application = spinnaker_application.terraform_example.application
     name        = "Deploy-sit"
-    pipeline    = file("pipelines/create-pipeline-deploy.json")
+    pipeline    = file("create-pipeline-deploy.json")
 }
 
 ## Pipeline deploy-hlg
 resource "spinnaker_pipeline" "terraform_example_01" {
     application = spinnaker_application.terraform_example.application
     name        = "Deploy-hlg"
-    pipeline    = file("pipelines/create-pipeline-deploy.json")
+    pipeline    = file("create-pipeline-deploy.json")
 }
 
 ## Pipeline deploy-prd
 resource "spinnaker_pipeline" "terraform_example_02" {
     application = spinnaker_application.terraform_example.application
     name        = "Deploy-prd"
-    pipeline    = file("pipelines/create-pipeline-deploy.json")
+    pipeline    = file("create-pipeline-deploy.json")
 }
 
 ## Pipeline rollback-prd
 resource "spinnaker_pipeline" "terraform_example_03" {
     application = spinnaker_application.terraform_example.application
     name        = "Rollback-prd"
-    pipeline    = file("pipelines/create-pipeline-deploy.json")
+    pipeline    = file("create-pipeline-deploy.json")
 }
