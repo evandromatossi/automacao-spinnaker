@@ -4,7 +4,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  copy-files:
+    name: Copy files TF
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -14,7 +15,7 @@ jobs:
         with:
           name: terraform
           path: ${{ github.workspace }}//spinnaker
-  deploy-dev-infra:
+  create-pipeline:
     name: Create pipeline spinnaker
     runs-on: ubuntu-latest
     
@@ -25,7 +26,7 @@ jobs:
     environment:
       name: dev
     
-    needs: build
+    needs: copy-files
     
     steps:
       - name: Download Terraform
