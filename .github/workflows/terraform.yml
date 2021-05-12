@@ -1,4 +1,4 @@
-name: DeployTerraform
+name: AutomacaoSpinnaker
 
 on:
   workflow_dispatch:
