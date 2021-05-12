@@ -14,7 +14,7 @@ provider "spinnaker" {
 ## Create app in spinnaker
 resource "spinnaker_application" "terraform_example" {
     application = "automacaoterraform"
-    email       = "evandro.junior@viavarejo.com.br"
+    email       = "automacao@viavarejo.com.br"
 }
 
 ## Pipeline deploy-sit
