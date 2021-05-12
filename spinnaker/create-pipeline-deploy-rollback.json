@@ -1,1 +1,43 @@
-
+{
+ "appConfig": {},
+ "application": "automacaoterraform",
+ "index": 0,
+ "keepWaitingPipelines": false,
+ "limitConcurrent": true,
+ "name": "Rollback-prd",
+ "spelEvaluator": "v4",
+ "stages": [
+  {
+   "account": "akspriv-dxttools-prd-admin",
+   "cloudProvider": "kubernetes",
+   "manifestArtifact": {
+    "artifactAccount": "nexus-viavarejo",
+    "reference": "${ trigger['payload']['urlNexus']}",
+    "type": "http/file"
+   },
+   "moniker": {
+    "app": "automacaoterraform"
+   },
+   "name": "Deploy (Manifest)",
+   "refId": "1",
+   "requisiteStageRefIds": [],
+   "skipExpressionEvaluation": false,
+   "source": "artifact",
+   "trafficManagement": {
+    "enabled": false,
+    "options": {
+     "enableTraffic": false,
+     "services": []
+    }
+   },
+   "type": "deployManifest"
+  }
+ ],
+ "triggers": [
+  {
+   "enabled": true,
+   "source": "viaops-app-rollback",
+   "type": "webhook"
+  }
+ ]
+}
