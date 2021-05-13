@@ -12,14 +12,14 @@ provider "spinnaker" {
 }
 
 ## Create app in spinnaker
-resource "spinnaker_application" "terraform_example" {
+resource "spinnaker_application" "app" {
     application = "var.name_app"
     email       = "var.name_email"
 }
 
 ## Pipeline deploy-sit
 resource "spinnaker_pipeline" "spinnaker_pipeline_sit" {
-    application = spinnaker_application.terraform_example.application
+    application = spinnaker_application.app.application
     name        = "Deploy-sit"
     pipeline    = file("create-pipeline-deploy-sit.json")
 }
