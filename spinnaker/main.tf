@@ -8,13 +8,13 @@ terraform {
 }
 
 provider "spinnaker" {
-    server = "var.endpoint"
+    server = "var.name_endpoint"
 }
 
 ## Create app in spinnaker
 resource "spinnaker_application" "spinnaker_app" {
-    application = "var.app"
-    email       = "var.email"
+    application = "var.name_app"
+    email       = "var.name_email"
 }
 
 ## Pipeline deploy-sit
