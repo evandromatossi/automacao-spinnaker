@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "spinnaker" {
-    server = "https://spinnaker-api.viavarejo.com.br"
+    server = "var.endpoint"
 }
 
 ## Create app in spinnaker
