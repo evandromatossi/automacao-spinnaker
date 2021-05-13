@@ -1,14 +1,14 @@
-variable "endpoint" {
+variable "name_endpoint" {
   type = string
   default = "https://spinnaker-api.viavarejo.com.br"
 }
 
-variable "app" {
+variable "name_app" {
   type = string
   default = "automacaoterraform"
 }
 
-variable "email" {
+variable "name_email" {
   type = string
   default = "automacao@viavarejo.com.br"
 }
